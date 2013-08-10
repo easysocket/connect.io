@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="connect-io.js" type="text/javascript"/>
+<script type="text/javascript">
+    connectio.connect("localhost:4500");
+   var params = new ConnectionParams();
+    params.connectionType="ROOM";
+    params.rooms="room1,room2,room3";
+    connectio.OnConnect(connectio.CreateEmitMethod(params));
+
+    connectio.CreateMessageMethod("message",function(data){console.log(data)});
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
